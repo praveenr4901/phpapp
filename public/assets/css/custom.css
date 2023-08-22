@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('../fonts/Roboto-Bold.ttf');
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+.card-head h5 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 19px !important;
+    color: #4F50B8 !important;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+.card-head {
+    position: relative;
+    margin-bottom: 30px;
+}
+.card-head h5::before {
+    content: "\eddc" !important;
+    font-family: 'IcoFont' !important;
+    background: none !important;
+    position: absolute;
+    left: 0px;
+    top: 4px;
+    font-size: 13px;
+    height: 20px;
+}
+.card-head h5::after {
+    content: "";
+    width: 97px;
+    height: 0.1em;
+    background: #4F50B8;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+}
+.card .card-header h6 {
+    text-align:right;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: 34px!important;
+    border: 2px solid #858585;
+    border-radius: 5px;
+}
+.card .card-block .sub-title {
+    font-family: 'Roboto-Bold';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 28px;
+    letter-spacing: 0px!important;
+}
+.col-form-label {
+    font-size: 13px;
+    font-family: 'Roboto-Bold';
+}
+.form-control-default {
+    border: 2px solid #858585;
+    border-radius: 5px;
+    color: #000000;
+}
+.input-group .custom-select:not(:last-child), .input-group .form-control:not(:last-child) {
+    border-top: 2px solid #858585;
+    border-top-left-radius: 5px!important;
+    border-bottom: 2px solid #858585;
+    border-bottom-left-radius: 5px!important;
+    border-left: 2px solid #858585;
+}
+.form-control {
+    border: 2px solid #cdcdcd!important;
+    border-radius: 5px;
+}
+.input-group-append .input-group-text, .input-group-prepend .input-group-text {
+    background-color: #5253bb!important;
+}
+.saveBtn {
+    font-family: 'Roboto-Regular';
+    width: 300px;
+    padding:10px 0px;
+    background: #5253BB;
+    border-radius: 9px;
+    font-size: 24px;
+}
+::placeholder { 
+    opacity:  0.1;/* Firefox */
+    color : #ababab !important;
+  }

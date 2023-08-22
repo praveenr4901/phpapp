@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('../fonts/Roboto-Bold.ttf');
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+.card-block .menu .breadcrumb .breadcrumb-item::before {
+	content: none!important;
+	font-family: "Roboto-Regular";
+	padding-right: 5px;
+	font-size: 12px;
+	color: #fff;
+}
+.page-header-title ul li {
+    display: inline-block;
+    font-family: 'Roboto-Bold';
+    font-size: 21px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 29px;
+    padding: 5px 0px;
+}
+.page-header-title ul li img {
+    width: 85px;
+}
+.page-header .page-block {
+    padding: 10px 100px;
+}
+.menu .breadcrumb-item:hover a {
+    font-weight: 600!important;
+}
+.menu .breadcrumb-item.active a , .menu .breadcrumb-item:active a {
+    font-weight: 600!important;
+}

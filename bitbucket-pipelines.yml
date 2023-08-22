@@ -1,0 +1,25 @@
+pipelines:
+  branches:
+    develop:
+      - step:
+          name: Deploying to Server
+          script:
+            - pipe: atlassian/rsync-deploy:0.7.0
+              variables:
+                USER: "lionsclub"
+                SERVER: "live.xminds.com"
+                SSH_PORT: "2221"
+                REMOTE_PATH: "/home/lionsclub/lionsweb-devnew"
+                LOCAL_PATH: "./"
+                DEBUG: "true"
+                EXTRA_ARGS: "-azh --exclude bitbucket-pipelines.yml --exclude .git --exclude .gitignore --exclude env --exclude .env --exclude .env.php --exclude env.php --exclude .htaccess --exclude Update.sh --exclude public/images"
+      - step:
+          name: Updateing server
+          script:
+            - pipe: atlassian/ssh-run:0.4.0
+              variables:
+                 SSH_USER: lionsclub
+                 SERVER: "live.xminds.com"
+                 PORT: 2221
+                 MODE: "command"
+                 COMMAND: "cd /home/lionsclub/lionsweb-devnew; ./Update.sh"
