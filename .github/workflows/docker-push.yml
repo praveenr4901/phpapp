@@ -1,9 +1,9 @@
-=name: Build and Push to Docker Hub
+name: Build and Push to Docker Hub
 
 on:
   push:
     branches:
-      - main  # or change to the branch you want
+      - main
 
 jobs:
   build-and-deploy:
