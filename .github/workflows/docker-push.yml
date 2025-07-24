@@ -31,6 +31,6 @@ jobs:
 
       - name: Trigger n8n Deployment Webhook
         run: |
-          curl -X POST https://n8n.zoondia.org/webhook/fae6224c-7e8d-4c95-8014-9288c78fc453 \
+          curl -X POST https://n8n.zoondia.org/webhook-test/fae6224c-7e8d-4c95-8014-9288c78fc453 \
           -H "Content-Type: application/json" \
           -d '{"image":"praveen4901/myapp:latest","status":"pushed"}'
