@@ -1,16 +1,16 @@
-name: Build and Push Docker Image
+=name: Build and Push to Docker Hub
 
 on:
   push:
     branches:
-      - main  # or whichever branch you want
+      - main  # or change to the branch you want
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
@@ -22,9 +22,15 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and Push Docker image
+      - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: yourdockerhubusername/yourimagename:latest
+          tags: praveen4901/myapp:latest
+
+      - name: Trigger n8n Deployment Webhook
+        run: |
+          curl -X POST https://n8n.zoondia.org/webhook/fae6224c-7e8d-4c95-8014-9288c78fc453 \
+          -H "Content-Type: application/json" \
+          -d '{"image":"praveen4901/myapp:latest","status":"pushed"}'
